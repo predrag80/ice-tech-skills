@@ -1,0 +1,64 @@
+# ICE Tech Skills project configuration — version 1
+# Copy into a project and replace examples. Remove unused optional keys.
+# Commands must be real project commands; never invent placeholders during execution.
+
+version: 1
+
+project:
+  name: example-app
+  type: web-application
+
+# Ordered only for readability. Load adapters only when relevant to the task.
+stack:
+  - typescript
+  - react
+  - nextjs
+  - postgresql
+
+validation:
+  # Each configured command is required unless required is explicitly false.
+  format:
+    command: npm run format:check
+    required: false
+  lint:
+    command: npm run lint
+    required: true
+  static_analysis:
+    command: npm run typecheck
+    required: true
+  unit_tests:
+    command: npm run test:unit
+    required: true
+  integration_tests:
+    command: npm run test:integration
+    required: false
+  build:
+    command: npm run build
+    required: true
+
+approval:
+  new_production_dependencies: required
+  significant_development_dependencies: required
+  destructive_database_changes: required
+  breaking_public_api_changes: required
+  auth_architecture_changes: required
+  production_configuration_changes: required
+  secrets_or_credentials: required
+  major_architecture_changes: required
+
+# Project policy may raise risk or require more validation; it may not waive v1 safety gates.
+risk_overrides:
+  paths:
+    - pattern: "migrations/**"
+      minimum: HIGH
+    - pattern: "src/auth/**"
+      minimum: HIGH
+
+rules:
+  documentation:
+    - AGENTS.md
+    - README.md
+  generated_paths:
+    - dist/**
+  notes:
+    - Do not edit generated output unless the task explicitly requires it.
