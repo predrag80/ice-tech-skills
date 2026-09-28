@@ -1,0 +1,38 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ice-tech-skills",
+  "version": "1.0.0",
+  "description": "Stack-agnostic software engineering workflows, standards, risk controls, and validation contracts for Codex.",
+  "author": {
+    "name": "ICE Tech"
+  },
+  "homepage": "https://github.com/predrag80/ice-tech-skills",
+  "repository": "https://github.com/predrag80/ice-tech-skills",
+  "keywords": [
+    "codex",
+    "software-engineering",
+    "skills",
+    "validation"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "ICE Tech Skills",
+        "shortDescription": "Reliable engineering workflows for Codex.",
+        "longDescription": "Six stack-agnostic engineering workflows with progressive context loading, risk classification, approval gates, and evidence-based validation.",
+        "developerName": "ICE Tech",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://github.com/predrag80/ice-tech-skills",
+        "defaultPrompt": [
+          "Implement this feature using ICE Tech Skills.",
+          "Investigate this bug using ICE Tech Skills.",
+          "Review these changes using ICE Tech Skills."
+        ]
+      }
+    }
+  }
+}

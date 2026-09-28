@@ -252,6 +252,8 @@ Claims MUST be specific enough to audit. Approval requests also include the exac
 ice-tech-skills/
 ├── README.md
 ├── SPEC.md
+├── plugin.json
+├── .codex-plugin/plugin.json
 ├── skills/
 │   ├── implement-feature/SKILL.md
 │   ├── fix-bug/SKILL.md
@@ -283,10 +285,14 @@ ice-tech-skills/
 │   ├── failure-policy.md
 │   ├── scope-protection.md
 │   └── validation-integrity.md
-└── templates/
-    ├── project.config.yaml
-    └── final-report.md
+├── templates/
+│   ├── project.config.yaml
+│   └── final-report.md
+└── scripts/
+    └── validate_repository.py
 ```
+
+The repository is distributed as one plugin so all primary skills can resolve shared governance, standards, stack adapters, and templates within the same installed package. The root `plugin.json` is canonical; `.codex-plugin/plugin.json` is a compatibility manifest.
 
 ## 21. v1 constraints
 
